@@ -35,11 +35,17 @@ class ItemController extends Controller
         return view('items.create');
     }
 
+    public function show($id)
+    {
+        $item = Item::find($id);
+        return view('items.show', compact('item'));
+    }
+
     public function store(Request $request)
     {
         $this->validate($request,['item_name' => 'required|string|max:255',
                                   'item_description' => 'required',
-                                  'item_status' => 'require',
+                                  'item_status' => 'required',
                                   'item_cost' => 'required']);
 
         Item::create($request->all());
@@ -62,5 +68,11 @@ class ItemController extends Controller
         ]);
         Item::find($id)->update($request->all());
         return redirect()->route('items.index')->with('success', 'Successfully updated item');
+    }
+
+    public function destroy($id)
+    {
+        $item = Item::find($id)->delete();
+        return redirect()->route('items.index')->with('success', 'Successfully deleted item');
     }
 }
