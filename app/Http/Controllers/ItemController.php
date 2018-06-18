@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\User;
+use DB;
 
-
-class HomeController extends Controller
+class ItemController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,14 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')->get();
-        return view('home', ['users' => $users]);
-        
+        return view('item');
     }
 
-    public function getData()
+    public function find()
     {
-        $users = DB::table('users')->get();
-       return view('home.getDa', ['users' => $users]);
+        $data['data'] = DB::table('users')->get();
+
+        return view('item',[ 'data' => $data]);
     }
 }

@@ -15,6 +15,17 @@
                     @endif
 
                     You are logged in!
+
+                    <table>
+                    @foreach($users as $row)
+                        <tr>
+                            <td>{{ $row->name }}</td>
+                            <td>{{ $row->email }}</td>
+                        </tr>
+
+                    @endforeach
+
+                    </table>
                 </div>
             </div>
         </div>
