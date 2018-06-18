@@ -12,6 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('fonts/glyphicons-halflings-regular.woff') }}" rel="stylesheet">
+    <link href="{{ asset('fonts/glyphicons-halflings-regular.woff2') }}" rel="stylesheet">
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 </head>
 <body>
     <div id="app">

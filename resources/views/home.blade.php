@@ -16,13 +16,20 @@
 
                     You are logged in!
 
-                    <table>
-                    @foreach($users as $row)
+                    <table class="table">
+                    <thead class="thead-dark">
                         <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    @foreach($users as $row)
+                    <tbody>
+                    <tr>
                             <td>{{ $row->name }}</td>
                             <td>{{ $row->email }}</td>
                         </tr>
-
+                    </tbody>
                     @endforeach
 
                     </table>

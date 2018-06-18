@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/item', 'ItemController@find')->name('item');
+Route::resource('items', 'ItemController');
 
 
 

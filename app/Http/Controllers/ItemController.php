@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Item;
 use DB;
 
 class ItemController extends Controller
@@ -24,13 +25,22 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('item');
+        $item = Item::all();
+        return view('items.index', compact('item'));
     }
 
-    public function find()
+    public function create()
     {
-        $data['data'] = DB::table('users')->get();
+        return view('items.create');
+    }
 
-        return view('item',[ 'data' => $data]);
+    public function store(Request $request)
+    {
+        $this->validate($request,['item_name' => 'required|string|max:255',
+                                  'item_description' => 'required',
+                                  'item_cost' => 'required']);
+
+        Item::create($request->all());
+        return redirect()->route('items.index')->with('success', 'Successfully created new item');
     }
 }
