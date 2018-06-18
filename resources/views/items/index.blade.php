@@ -2,12 +2,13 @@
 
 @section('content')
 <div class="container">
-<h2>HTML Table</h2>
+<h2>Items Inventory</h2>
 
     <table class="table table-striped">
         <tr>
             <th>Item Name</th>
             <th>Item Description</th>
+            <th>Item Status</th>
             <th>Item Cost</th>
             <th class="text-left">
                 <a href="{{ route('items.create') }}" class="btn btn-success btn-small">
@@ -20,6 +21,7 @@
         <tr>
             <td>{{ $value->item_name}}</td>
             <td>{{ $value->item_description }}</td>
+            <td>{{ $value->item_status }}</td>
             <td>{{ $value->item_cost }}</td>
             <td style="width: 400px;">
                 <a class="btn btn-info btn-sm" href="{{ route('items.show', $value->id) }}">

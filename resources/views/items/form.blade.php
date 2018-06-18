@@ -26,6 +26,19 @@
 
 <div class="row">
     <div class="col-sm-2">
+        {!! form::label('item status', 'Item Status' ) !!}
+    </div>
+
+    <div class="col-sm-10">
+        <div class="form-group" {{ $errors->has('item_status') ? 'has_errors' : "" }}>
+            {!! Form::select('item_status',array('New' => 'new', 'Old' => 'old'),'New',['class'=>'form-control']) !!}
+            {!! $errors->first('item_status', '<p class="help-block">:message</p>') !!}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-2">
         {!! form::label('item cost', 'Item Cost' ) !!}
     </div>
 

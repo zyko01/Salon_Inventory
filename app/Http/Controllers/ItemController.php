@@ -30,7 +30,8 @@ class ItemController extends Controller
     }
 
     public function create()
-    {
+    {   
+        $item = Item::pluck('item_status', 'id');
         return view('items.create');
     }
 
@@ -38,9 +39,28 @@ class ItemController extends Controller
     {
         $this->validate($request,['item_name' => 'required|string|max:255',
                                   'item_description' => 'required',
+                                  'item_status' => 'require',
                                   'item_cost' => 'required']);
 
         Item::create($request->all());
         return redirect()->route('items.index')->with('success', 'Successfully created new item');
+    }
+
+    public function edit($id)
+    {
+        $item = Item::find($id);
+        return view('items.edit', compact('item'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request,[
+                        'item_name' => 'required|string|max:255',
+                        'item_description' => 'required',
+                        'item_status' => 'required',
+                        'item_cost' => 'required'
+        ]);
+        Item::find($id)->update($request->all());
+        return redirect()->route('items.index')->with('success', 'Successfully updated item');
     }
 }
