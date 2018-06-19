@@ -25,6 +25,19 @@
 </div>
 
 <div class="row">
+<div class="col-sm-2">
+    {!! form::label('item quantity', 'Item Quantity' ) !!}
+</div>
+
+<div class="col-sm-10">
+    <div class="form-group" {{ $errors->has('item_quantity') ? 'has_errors' : "" }}>
+        {!! Form::number('item_quantity', NULL,['class'=>'form-control', 'id'=>'item_quantity']) !!}
+        {!! $errors->first('item_quantity', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+</div>
+
+<div class="row">
     <div class="col-sm-2">
         {!! form::label('item status', 'Item Status' ) !!}
     </div>
@@ -50,7 +63,12 @@
     </div>
 </div>
 
+<div class="row" style="padding:15px 10px 0 10px;">
+    <div class="form-group pull-left">
+        {!! Form::button(isset($model)? 'update' : 'save', ['class'=>'btn btn-success' ,'type'=>'submit']) !!}
+    </div>
 
-<div class="form-group">
-    {!! Form::button(isset($model)? 'update' : 'save', ['class'=>'btn btn-success' ,'type'=>'submit']) !!}
+    <div class="form-group pull-right">
+    <a class="btn btn-danger" href="{{ route('items.index') }}">Cancel</a>
+    </div>
 </div>

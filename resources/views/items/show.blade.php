@@ -30,6 +30,13 @@
 
     <div class="col-xs-12 col-md-12 col-lg-12">
         <div class="form-group">
+            <strong>Quantity: </strong>
+                {{ $item->item_quantity }}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 col-lg-12">
+        <div class="form-group">
             <strong>Item Status: </strong>
                 {{ $item->item_status }}
         </div>

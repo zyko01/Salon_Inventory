@@ -13,8 +13,10 @@
         <tr>
             <th>Item Name</th>
             <th>Item Description</th>
+            <th>Quantity</th>
             <th>Item Status</th>
             <th>Item Cost</th>
+            <th>Date Created</th>
             <th class="text-left">
                 <a href="{{ route('items.create') }}" class="btn btn-success btn-small">
                     <i class="glyphicon glyphicon-plus"></i>
@@ -26,8 +28,10 @@
         <tr>
             <td>{{ $value->item_name}}</td>
             <td>{{ $value->item_description }}</td>
+            <td>{{ $value->item_quantity }}</td>
             <td>{{ $value->item_status }}</td>
             <td>{{ $value->item_cost }}</td>
+            <td>{{ $value->created_at }}</td>
             <td style="width: 400px;">
                 <a class="btn btn-info btn-sm" href="{{ route('items.show', $value->id) }}">
                     <i class="glyphicon glyphicon-th-large"></i>

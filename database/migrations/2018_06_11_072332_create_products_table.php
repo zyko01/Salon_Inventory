@@ -18,7 +18,8 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->string('product_name');
             $table->text('product_description');
-            $table->boolean('status')->default(1);
+            $table->enum('product_category', ['Hair Products', 'Nail Products', 'Makeup and Cosmetics']);
+            $table->enum('product_status', ['in stock', 'out of stock']);
             $table->float('product_cost', 8, 2);
             $table->timestamps();
         });

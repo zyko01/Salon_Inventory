@@ -17,6 +17,7 @@ class CreateItemsTable extends Migration
             $table->increments('id');
             $table->string('item_name');
             $table->text('item_description');
+            $table->integer('item_quantity');
             $table->enum('item_status', ['old', 'new']);
             $table->float('item_cost', 8, 2);
             $table->timestamps();
