@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'SALON INVENTORY') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('fonts/glyphicons-halflings-regular.woff') }}" rel="stylesheet">
     <link href="{{ asset('fonts/glyphicons-halflings-regular.woff2') }}" rel="stylesheet">
@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -40,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="{{ route('items.index') }}">Items</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

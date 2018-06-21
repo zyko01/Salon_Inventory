@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::resource('items', 'ItemController');
 
-
-
 Route::Post('login/custom', [
 
     'uses' => 'LoginController@login',
