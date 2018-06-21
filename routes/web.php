@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('items', 'ItemController');
+
 
 Route::Post('login/custom', [
 
@@ -30,6 +30,10 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('/dashboard', function(){
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('items', 'ItemController');
+
+    Route::resource('products', 'ProductController');
 });
 
 Route::group(['middleware' => 'auth'], function(){

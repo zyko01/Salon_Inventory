@@ -41,6 +41,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('items.index') }}">Items</a></li>
+                        <li><a href="{{ route('products.index') }}">Products</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
