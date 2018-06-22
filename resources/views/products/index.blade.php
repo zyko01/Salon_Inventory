@@ -5,7 +5,6 @@
 <h2>Products Inventory</h2>
 <table class="table table-striped">
         <tr>
-            <th>Product ID</th>
             <th>Brand</th>
             <th>Description</th>
             <th>Product Category</th>

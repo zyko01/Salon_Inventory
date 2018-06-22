@@ -70,7 +70,8 @@ class ProductController extends Controller
                             'expiration' => 'required',
                             'product_cost' => 'required',
                             'date_delivered' => 'required']);
-         Product::find($id)->update($request->all());
+         
+                            Product::find($id)->update($request->all());
          return redirect()->route('products.index')->with('success', 'Successfully updated product');
      }
  
