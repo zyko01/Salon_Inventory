@@ -30,8 +30,14 @@ class ProductController extends Controller
 
      public function create()
      {   
-         $product = Product::pluck('product_status', 'product_name', 'product_type', 'product_category', 'id' );
+         $product = Product::pluck('product_name', 'product_type', 'product_category');
          return view('products.create');
+     }
+
+     public function show($id)
+     {
+         $Product = Product::find($id);
+         return view('products.show', compact('product'));
      }
 
      public function store(Request $request)
@@ -39,10 +45,41 @@ class ProductController extends Controller
          $this->validate($request,['product_name' => 'required|string|max:255',
                                    'product_type' => 'required',
                                    'product_category' => 'required',
-                                   'product_status' => 'required',
-                                   'product_cost' => 'required']);
+                                   'product_quantity' => 'required',
+                                   'expiration' => 'required',
+                                   'product_cost' => 'required',
+                                   'date_delivered' => 'required']);
  
          Product::create($request->all());
          return redirect()->route('products.index')->with('success', 'Successfully created new product');
      }
-}
+
+     public function edit($id)
+     {
+         $product = Product::find($id);
+         return view('products.edit', compact('product'));
+     }
+ 
+     public function update(Request $request, $id)
+     {
+         $this->validate($request,[
+                            'product_name' => 'required|string|max:255',
+                            'product_type' => 'required',
+                            'product_category' => 'required',
+                            'product_quantity' => 'required',
+                            'expiration' => 'required',
+                            'product_cost' => 'required',
+                            'date_delivered' => 'required']);
+         Product::find($id)->update($request->all());
+         return redirect()->route('products.index')->with('success', 'Successfully updated product');
+     }
+ 
+     public function destroy($id)
+     {
+         $product = Product::find($id)->delete();
+         return redirect()->route('products.index')->with('success', 'Successfully deleted product');
+     }
+
+ }
+ 
+

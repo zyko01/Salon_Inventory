@@ -12,16 +12,16 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-2">
-        {!! form::label('product description1', 'Product Description1' ) !!}
-    </div>
+<div class="col-sm-2">
+    {!! form::label('product description', 'Product Description' ) !!}
+</div>
 
-    <div class="col-sm-10">
-        <div class="form-group" {{ $errors->has('product_description1') ? 'has_errors' : "" }}>
-            {!! Form::text('product_description1', NULL,['class'=>'form-control', 'id'=>'product_description1', 'placeholder'=>'Product Description1']) !!}
-            {!! $errors->first('product_description1', '<p class="help-block">:message</p>') !!}
-        </div>
+<div class="col-sm-10">
+    <div class="form-group" {{ $errors->has('product_description') ? 'has_errors' : "" }}>
+        {!! Form::text('product_description', NULL,['class'=>'form-control', 'id'=>'product_description', 'placeholder'=>'Product Description']) !!}
+        {!! $errors->first('product_description', '<p class="help-block">:message</p>') !!}
     </div>
+</div>
 </div>
 
 <div class="row">
@@ -31,11 +31,28 @@
 
     <div class="col-sm-10">
         <div class="form-group" {{ $errors->has('product_category') ? 'has_errors' : "" }}>
-            {!! Form::select('product_category',array('hair products' => 'HAIR PRODUCTS', 'nail products' => 'NAIL PRODUCTS', 'make up and cosmetics' => 'MAKE UP AND COSMETICS'),'SELECT',['class'=>'form-control']) !!}
+            {!! Form::select('product_category',array('select' => '-SELECT-','hair products' => 'HAIR PRODUCTS', 'nail products' => 'NAIL PRODUCTS', 'make up and cosmetics' => 'MAKE UP AND COSMETICS'),'-SELECT-',['class'=>'form-control']) !!}
             {!! $errors->first('product_category', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-sm-2">
+        {!! form::label('product type', 'Product Type' ) !!}
+    </div>
+
+    <div class="col-sm-10">
+        <div class="form-group" {{ $errors->has('product_type') ? 'has_errors' : "" }}>
+            {!! Form::select('product_type',array('select' => '-SELECT-','hair color' => 'HAIR COLOR', 'creme peroxide' => 'CREME PEROXIDE', 'neutralizing creme' => 'NEUTRALIZING CREME',
+                                                  'smoothing creme' => 'SMOOTHING CREME', 'hena wax' => 'HENA WAX', 'hair spa' => 'HAIR SPA',
+                                                  'sensitised hair' => 'SENSITISED HAIR', 'color developer' => 'COLOR DEVELOPER', 'natural' => 'NATURAL', 
+                                                  'mild' => 'MILD', 'intense' => 'INTENSE', 'emulsion' => 'EMULSION', 'intesive emulsion' => 'INTENSIVE EMULSION'),'-SELECT-',['class'=>'form-control']) !!}
+            {!! $errors->first('product_type', '<p class="help-block">:message</p>') !!}
+        </div>
+    </div>
+</div>
+
 
 <div class="row">
     <div class="col-sm-2">
@@ -50,18 +67,6 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-sm-2">
-        {!! form::label('product description2', 'Product Description2' ) !!}
-    </div>
-
-    <div class="col-sm-10">
-        <div class="form-group" {{ $errors->has('product_description2') ? 'has_errors' : "" }}>
-            {!! Form::text('product_description2', NULL,['class'=>'form-control', 'id'=>'product_description2', 'placeholder'=>'Product Description']) !!}
-            {!! $errors->first('product_description2', '<p class="help-block">:message</p>') !!}
-        </div>
-    </div>
-</div>
 
 <div class="row">
     <div class="col-sm-2">
@@ -78,13 +83,13 @@
 
 <div class="row">
     <div class="col-sm-2">
-        {!! form::label('produce bottle', 'Produce Bottle' ) !!}
+        {!! form::label('product cost', 'Product Cost' ) !!}
     </div>
 
     <div class="col-sm-10">
-        <div class="form-group" {{ $errors->has('produce_bottle') ? 'has_errors' : "" }}>
-            {!! Form::number('produce_bottle', NULL,['class'=>'form-control', 'id'=>'produce_bottle', ]) !!}
-            {!! $errors->first('produce_bottle', '<p class="help-block">:message</p>') !!}
+        <div class="form-group" {{ $errors->has('product_cost') ? 'has_errors' : "" }}>
+            {!! Form::number('product_cost', NULL,['class'=>'form-control', 'id'=>'product_cost', ]) !!}
+            {!! $errors->first('product_cost', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
 </div>
@@ -102,31 +107,6 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-sm-2">
-        {!! form::label('product status', 'Product Status' ) !!}
-    </div>
-
-    <div class="col-sm-10">
-        <div class="form-group" {{ $errors->has('product_status') ? 'has_errors' : "" }}>
-            {!! Form::select('product_status',array('in stock' => 'In Stock', 'out of stock' => 'Out of Stock'),'SELECT',['class'=>'form-control']) !!}
-            {!! $errors->first('product_status', '<p class="help-block">:message</p>') !!}
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-2">
-        {!! form::label('mfx', 'MFX' ) !!}
-    </div>
-
-    <div class="col-sm-10">
-        <div class="form-group" {{ $errors->has('MFX') ? 'has_errors' : "" }}>
-            {!! Form::text('MFX', NULL,['class'=>'form-control', 'id'=>'MFX', 'placeholder'=>'MFX']) !!}
-            {!! $errors->first('MFX', '<p class="help-block">:message</p>') !!}
-        </div>
-    </div>
-</div>
 
 <div class="row">
     <div class="col-sm-2">
@@ -140,6 +120,21 @@
         </div>
     </div>
 </div>
+
+
+<div class="row">
+    <div class="col-sm-2">
+        {!! form::label('date delivered', 'Date Delivered' ) !!}
+    </div>
+
+    <div class="col-sm-10">
+        <div class="form-group" {{ $errors->has('date_delivered') ? 'has_errors' : "" }}>
+            {!! Form::date('date_delivered', NULL,['class'=>'form-control', 'id'=>'date_delivered' ]) !!}
+            {!! $errors->first('date_delivered', '<p class="help-block">:message</p>') !!}
+        </div>
+    </div>
+</div>
+
 
 <div class="row" style="padding:15px 10px 0 10px;">
     <div class="form-group pull-left">
