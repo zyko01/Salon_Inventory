@@ -4,3 +4,10 @@
 .navbar{
     background-color: #16222A !important;
 }
+
+table, th, td{
+    padding: 13px !important;
+}
+th{
+    border-bottom: 3px solid #e3e3e3;
+}

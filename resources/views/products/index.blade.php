@@ -3,18 +3,26 @@
 @section('content')
 <div class="container-fluid">
 <h2>Products Inventory</h2>
+
+@if ( $message = Session::get('success') )
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+@endif
 <table class="table table-striped">
         <tr>
+            <th style="width: 40px;">Product Id</th>
             <th>Brand</th>
             <th>Description</th>
             <th>Product Category</th>
-            <th>Product Type</th>
+            <th style="width: 170px;">Product Type</th>
             <th>Color no.</th>
             <th>Product Quantity</th>
             <th>Product Cost</th>
             <th>Remarks</th>
-            <th>Expiration Date</th>
-            <th>Date Delivered</th>
+            <th style="width: 140px;">Total Cost</th>
+            <th style="width: 150px;">Expiration Date</th>
+            <th style="width: 150px;">Date Delivered</th>
             <th class="text-left">
                 <a href="{{ route('products.create') }}" class="btn btn-success btn-small">
                     <i class="glyphicon glyphicon-plus"></i>
@@ -25,14 +33,16 @@
         @foreach($product as $key => $value)
         <?php $total = 0; $total = $value->product_cost * $value->product_quantity; ?>
         <tr>
+            <td style="width: 100px;">{{ $value->id }}</td>
             <td>{{ $value->product_name}}</td>
-            <td>{{ $value->product_description }}</td>
-            <td>{{ $value->product_category }}</td>
+            <td style="width: 150px;">{{ $value->product_description }}</td>
+            <td style="width: 150px;">{{ $value->product_category }}</td>
             <td>{{ $value->product_type }}</td>
             <td>{{ $value->color_no }}</td>
             <td>{{ $value->product_quantity }}</td>
-            <td>{{ $value->product_cost }}</td>
+            <td>&#8369; {{ $value->product_cost }}</td>
             <td>{{ $value->remarks }}</td>
+            <td><strong>&#8369; {{ $total }}</strong></td>
             <td>{{ $value->expiration }}</td>
             <td>{{ $value->date_delivered }}</td>
             <td style="width: 400px;">

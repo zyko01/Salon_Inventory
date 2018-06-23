@@ -10,4 +10,10 @@ class Product extends Model
                            'product_category', 'product_type', 'color_no', 
                             'remarks', 'product_cost', 'expiration', 'date_delivered'];
     protected $dates = ['created_at', 'updated_at'];
+
+
+    public function RebottledProduct()
+    {
+        return $this->hasOne('RebottledProduct');
+    }
 }
