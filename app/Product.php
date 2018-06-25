@@ -11,9 +11,11 @@ class Product extends Model
                             'remarks', 'product_cost', 'expiration', 'date_delivered'];
     protected $dates = ['created_at', 'updated_at'];
 
+    protected $primaryKey = 'id';
+    protected $table = 'products';
 
-    public function RebottledProduct()
-    {
-        return $this->hasOne('RebottledProduct');
-    }
+   public function rebottles()
+   {
+       return $this->hasMany('App\Rebottle');
+   }
 }

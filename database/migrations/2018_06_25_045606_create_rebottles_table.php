@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRebottledProductsTable extends Migration
+class CreateRebottlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateRebottledProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rebottled_products', function (Blueprint $table) {
+        Schema::create('rebottles', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('use_product');
-            $table->integer('produce_bottle');
+            $table->integer('quantity_use');
+            $table->decimal('produce_bottle', 13, 1);
             $table->enum('designation', ['RECEPTION', 'OFFICE', 'STOCK ROOM']);
+            
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateRebottledProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rebottled_products');
+        Schema::dropIfExists('rebottles');
     }
 }

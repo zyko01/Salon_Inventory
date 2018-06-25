@@ -19,8 +19,8 @@
             <th>Color no.</th>
             <th>Product Quantity</th>
             <th>Product Cost</th>
-            <th>Remarks</th>
-            <th style="width: 140px;">Total Cost</th>
+            <th style="width: 70px;">Remarks</th>
+            <th style="width: 170px;">Total Cost</th>
             <th style="width: 150px;">Expiration Date</th>
             <th style="width: 150px;">Date Delivered</th>
             <th class="text-left">
@@ -35,17 +35,17 @@
         <tr>
             <td style="width: 100px;">{{ $value->id }}</td>
             <td>{{ $value->product_name}}</td>
-            <td style="width: 150px;">{{ $value->product_description }}</td>
+            <td style="width: 350px;">{{ $value->product_description }}</td>
             <td style="width: 150px;">{{ $value->product_category }}</td>
             <td>{{ $value->product_type }}</td>
             <td>{{ $value->color_no }}</td>
             <td>{{ $value->product_quantity }}</td>
             <td>&#8369; {{ $value->product_cost }}</td>
             <td>{{ $value->remarks }}</td>
-            <td><strong>&#8369; {{ $total }}</strong></td>
+            <td style="width: 150px;"><strong>&#8369; {{ $total }}</strong></td>
             <td>{{ $value->expiration }}</td>
             <td>{{ $value->date_delivered }}</td>
-            <td style="width: 400px;">
+            <td style="width: 800px;">
                 <a class="btn btn-info btn-sm" href="{{ route('products.show', $value->id) }}">
                     <i class="glyphicon glyphicon-th-large"></i>
                 </a>

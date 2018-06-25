@@ -23,15 +23,15 @@ class CreateProductsTable extends Migration
                         'A & K', 'MELLINA PROFESSIONALE', 'DRAGON BEAUTY', 'JACKIE',
                         '7 STAR','SHINE', 'HERSHE', 'KOLIES', 'OMG NAIL POLISH',
                         'CARONIA', 'CHIQ', 'NAIL OVE', 'BOBBY', 'ORLY','BK']);
-            $table->text('product_description');
+            $table->text('product_description')->nullable();
             $table->enum('product_category', ['Hair Products', 'Nail Products', 'Makeup and Cosmetics']);
             $table->enum('product_type', ['HAIR COLOR', 'CREME PEROXIDE', 'NEUTRALIZING CREME',
                          'SMOOTHING CREME', 'HENA WAX', 'HAIR SPA','SENSITISED HAIR','COLOR DEVELOPER',
                          'NATURAL', 'MILD', 'INTENSE', 'EMULSION', 'INTENSIVE EMULSION']);
-            $table->float('color_no');
+            $table->float('color_no')->nullable();
             $table->integer('product_quantity');
             $table->float('product_cost', 8, 2);
-            $table->text('remarks');
+            $table->text('remarks')->nullable();
             $table->date('expiration');
             $table->date('date_delivered');
             $table->timestamps();

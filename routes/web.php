@@ -34,6 +34,10 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('items', 'ItemController');
 
     Route::resource('products', 'ProductController');
+
+    // Route::resource('rebottledproducts', 'RebottledProductController');
+
+    Route::resource('rebottleproducts', 'RebottleProductController');
 });
 
 Route::group(['middleware' => 'auth'], function(){

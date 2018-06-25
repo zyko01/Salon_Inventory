@@ -11,8 +11,17 @@
             <a class="btn btn-primary" href="{{ route('items.index') }}"><i class="glyphicon glyphicon-arrow-left"></i></a>
         </div>
     </div>
+    <!-- <p>{{ $product->rebottles }}</p> -->
+    <div class="col-md-12">
+        @foreach( $product->rebottles as $value )
+
+        <p>rebottle id {{ $value->id }}</p>
+        <p>{{ $value->quantity_use }}</p>
+
+        @endforeach
+    </div>
 </div> 
 
-</div>
+
 
 @endsection
