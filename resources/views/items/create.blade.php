@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 
 @section('content')
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-12">
         {!! Form::open(['route'=>'items.store' , 'method'=>'POST']) !!}
             @include('items.form')
         {!! Form::close() !!}

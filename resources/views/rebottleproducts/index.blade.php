@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container-fluid">
@@ -22,7 +22,7 @@
             <th>Designation</th>
             <th class="text-left">
                 <a href="{{ route('rebottleproducts.create') }}" class="btn btn-success btn-small">
-                    <i class="glyphicon glyphicon-plus"></i>
+                    <i class="fas fa-plus"></i>
                 </a>
             </th>
         </tr>
@@ -52,7 +52,7 @@
 
                 {!! Form::open(['method' => 'DELETE', 'route' => ['rebottleproducts.destroy', $value->id], 'style'=>'display:inline' ]) !!}
                     <button type="submit" style="display:inline;" class="btn btn-danger btn-sm">
-                        <i class="glyphicon glyphicon-trash"></i>
+                        <i class="fas fa-trash"></i>
                     </button>
                 {!! Form::close() !!}
             </td>

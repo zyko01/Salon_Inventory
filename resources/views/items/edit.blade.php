@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-12">
         {!! Form::model($item,['route'=>['items.update', $item->id], 'method'=> 'PATCH']) !!}
             @include('items.form')
         {!! Form::close() !!}

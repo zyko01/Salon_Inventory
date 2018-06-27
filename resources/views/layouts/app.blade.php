@@ -12,14 +12,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <!-- bootstrap 3.3.7 -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Fonts -->
     <link href="{{ asset('fonts/glyphicons-halflings-regular.woff') }}" rel="stylesheet">
     <link href="{{ asset('fonts/glyphicons-halflings-regular.woff2') }}" rel="stylesheet">
+    <!-- Template -->
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-inverse navbar-static-top">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
 
@@ -76,9 +79,9 @@
                 </div>
             </div>
         </nav>
-
         @yield('content')
-    </div>
+      
+</div> <!--wrapper -->
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

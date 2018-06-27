@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container-fluid">
@@ -18,16 +18,16 @@
             <th style="width: 170px;">Product Type</th>
             <th>Color no.</th>
             <th>Product Quantity</th>
-            <th>Quantity Use</th>
             <th>Product Cost</th>
             <th style="width: 70px;">Remarks</th>
             <th style="width: 170px;">Total Cost</th>
             <th style="width: 150px;">Expiration Date</th>
             <th style="width: 150px;">Date Delivered</th>
-            <th class="text-left">
+            <th class="text-left"><strong>
                 <a href="{{ route('products.create') }}" class="btn btn-success btn-small">
-                    <i class="glyphicon glyphicon-plus"></i>
+                    <i class="fas fa-plus"></i>
                 </a>
+            </strong>
             </th>
         </tr>
       
@@ -50,16 +50,16 @@
             <td>{{ $value->date_delivered }}</td>
             <td style="width: 800px;">
                 <a class="btn btn-info btn-sm" href="{{ route('products.show', $value->id) }}">
-                    <i class="glyphicon glyphicon-th-large"></i>
+                    <i class="fas fa-th-large"></i>
                 </a>
 
                 <a class="btn btn-primary btn-sm" href="{{ route('products.edit', $value->id) }}">
-                    <i class="glyphicon glyphicon-pencil"></i>
+                    <i class="fas fa-edit"></i>
                 </a>
 
                 {!! Form::open(['method' => 'DELETE', 'route' => ['products.destroy', $value->id], 'style'=>'display:inline' ]) !!}
                     <button type="submit" style="display:inline;" class="btn btn-danger btn-sm">
-                        <i class="glyphicon glyphicon-trash"></i>
+                        <i class="fas fa-trash"></i>
                     </button>
                 {!! Form::close() !!}
             </td>

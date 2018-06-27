@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
@@ -20,7 +20,7 @@
             <th>Date Created</th>
             <th class="text-left">
                 <a href="{{ route('items.create') }}" class="btn btn-success btn-small">
-                    <i class="glyphicon glyphicon-plus"></i>
+                    <i class="fas fa-plus"></i>
                 </a>
             </th>
         </tr>
@@ -37,16 +37,16 @@
             <td>{{ $value->created_at->format('M d, Y') }}</td>
             <td style="width: 400px;">
                 <a class="btn btn-info btn-sm" href="{{ route('items.show', $value->id) }}">
-                    <i class="glyphicon glyphicon-th-large"></i>
+                    <i class="fas fa-th-large"></i>
                 </a>
 
                 <a class="btn btn-primary btn-sm" href="{{ route('items.edit', $value->id) }}">
-                    <i class="glyphicon glyphicon-pencil"></i>
+                    <i class="fas fa-edit"></i>
                 </a>
 
                 {!! Form::open(['method' => 'DELETE', 'route' => ['items.destroy', $value->id], 'style'=>'display:inline' ]) !!}
                     <button type="submit" style="display:inline;" class="btn btn-danger btn-sm">
-                        <i class="glyphicon glyphicon-trash"></i>
+                        <i class="fas fa-trash"></i>
                     </button>
                 {!! Form::close() !!}
             </td>

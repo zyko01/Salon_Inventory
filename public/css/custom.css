@@ -11,3 +11,18 @@ table, th, td{
 th{
     border-bottom: 3px solid #e3e3e3;
 }
+
+/* NAVIGATION STYLING */
+.skin-green .main-header .navbar {
+    background-color: #16222a;
+}
+
+.skin-green .main-header .logo {
+    background-color: #16222a !important;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+
+.skin-green .main-header li.user-header {
+    background-color: #16222a !important;
+}
