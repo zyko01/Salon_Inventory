@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Rebottle;
 
 class ProductController extends Controller
 {
@@ -25,7 +26,9 @@ class ProductController extends Controller
      public function index()
      {
          $product = Product::all();
-         return view('products.index', compact('product'));
+         $rebottle = Rebottle::all();
+        
+         return view('products.index', compact('rebottle','product'));
      }
 
      public function create()

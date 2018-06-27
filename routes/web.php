@@ -38,6 +38,8 @@ Route::group(['middleware' => 'admin'], function(){
     // Route::resource('rebottledproducts', 'RebottledProductController');
 
     Route::resource('rebottleproducts', 'RebottleProductController');
+
+    Route::get('/summary', 'SummaryController@index')->name('summary');
 });
 
 Route::group(['middleware' => 'auth'], function(){

@@ -18,6 +18,7 @@
             <th style="width: 170px;">Product Type</th>
             <th>Color no.</th>
             <th>Product Quantity</th>
+            <th>Quantity Use</th>
             <th>Product Cost</th>
             <th style="width: 70px;">Remarks</th>
             <th style="width: 170px;">Total Cost</th>
@@ -29,9 +30,11 @@
                 </a>
             </th>
         </tr>
-
+      
         @foreach($product as $key => $value)
-        <?php $total = 0; $total = $value->product_cost * $value->product_quantity; ?>
+        <?php $total = 0; $total = $value->product_cost * $value->product_quantity; 
+        
+        ?>
         <tr>
             <td style="width: 100px;">{{ $value->id }}</td>
             <td>{{ $value->product_name}}</td>

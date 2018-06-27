@@ -14,7 +14,10 @@
         <tr>
             <th>Rebottled ID</th>
             <th>Product ID</th>
-            <th>Product quantity used</th>
+            <th>Brand</th>
+            <th>Product Quantity</th>
+            <th>Product Quantity Used</th>
+            <!-- <th>Product Left</th> -->
             <th>Produce Bottle</th>
             <th>Designation</th>
             <th class="text-left">
@@ -25,23 +28,29 @@
         </tr>
 
         @foreach($rebottle as $key => $value)
+        <?php  $value->product->product_quantity = $value->product->product_quantity - $value->quantity_use; 
+        
+        ?>
         <tr>
             <td style="width: 100px;">{{ $value->id }}</td>
             <td>{{ $value->product_id }}</td>
+            <td>{{ $value->product->product_name }}</td>
+            <td>{{ $value->product->product_quantity }}</td>
             <td>{{ $value->quantity_use }}</td>
             <td>{{ $value->produce_bottle }}</td>
             <td>{{ $value->designation }}</td>
+            
 
             <td style="width: 400px;">
-                <a class="btn btn-info btn-sm" href="{{ route('products.show', $value->id) }}">
+                <!-- <a class="btn btn-info btn-sm" href="{{ route('rebottleproducts.show', $value->id) }}">
                     <i class="glyphicon glyphicon-th-large"></i>
                 </a>
 
-                <a class="btn btn-primary btn-sm" href="{{ route('products.edit', $value->id) }}">
+                <a class="btn btn-primary btn-sm" href="{{ route('rebottleproducts.edit', $value->id) }}">
                     <i class="glyphicon glyphicon-pencil"></i>
-                </a>
+                </a> -->
 
-                {!! Form::open(['method' => 'DELETE', 'route' => ['products.destroy', $value->id], 'style'=>'display:inline' ]) !!}
+                {!! Form::open(['method' => 'DELETE', 'route' => ['rebottleproducts.destroy', $value->id], 'style'=>'display:inline' ]) !!}
                     <button type="submit" style="display:inline;" class="btn btn-danger btn-sm">
                         <i class="glyphicon glyphicon-trash"></i>
                     </button>

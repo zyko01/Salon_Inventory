@@ -14,7 +14,7 @@ class Product extends Model
     protected $primaryKey = 'id';
     protected $table = 'products';
 
-   public function rebottles()
+   public function rebottle()
    {
        return $this->hasMany('App\Rebottle');
    }

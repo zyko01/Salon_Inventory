@@ -43,8 +43,10 @@ class RebottleProductController extends Controller
 
     public function show($id)
     {
+        $product = Product::all();
+        $rbottle = Rebottle::all();
         $rebottle = Rebottle::find($id);
-        return view('rebottleproducts.show', compact('rebottle'));
+        return view('rebottleproducts.show', compact('rebottle', 'rbottle', 'product'));
     }
 
     public function store(Request $request)
@@ -58,23 +60,23 @@ class RebottleProductController extends Controller
        return redirect()->route('rebottleproducts.index')->with('success', 'Successfully created new product');
     }
 
-    public function edit($id)
-    {
-        $rebottle = Rebottle::find($id);
-        return view('rebottleproducts.edit', compact('rebottle'));
-    }
+    // public function edit($id)
+    // {
+    //     $rebottle = Rebottle::find($id);
+    //     return view('rebottleproducts.edit', compact('rebottle'));
+    // }
 
-    public function update(Request $request, $id)
-    {
-        $this->validate($request,[
-                                   'product_id' => 'required',
-                                   'quantity_use' => 'required',
-                                   'produce_bottle' => 'required',
-                                   'designation' => 'required']);
-        
-        Rebottle::find($id)->update($request->all());
-        return redirect()->route('rebottleproducts.index')->with('success', 'Successfully updated product');
-    }
+    // public function update(Request $request, $id)
+    // {
+    //     $this->validate($request,[
+    //                                'product_id' => 'required',
+    //                                'quantity_use' => 'required',
+    //                                'produce_bottle' => 'required',
+    //                                'designation' => 'required']);
+                               
+    //     Rebottle::find($id)->update($request->all());
+    //     return redirect()->route('rebottleproducts.index')->with('success', 'Successfully updated product');
+    // }
 
     public function destroy($id)
     {
