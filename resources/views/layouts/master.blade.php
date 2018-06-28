@@ -11,7 +11,11 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"> --> -->
+  <link rel="stylesheet" href="{{ asset('fonts/fontawesome/css/all.css') }}">
+
+
 
 
   <!-- css -->
@@ -51,13 +55,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset('img/photo1.png') }}" class="user-image" alt="User Image">
+              <img src="{{ asset('img/user1-128x128.jpg') }}" class="user-image" alt="User Image">
               <span class="hidden-xs"> {{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{ asset('img/photo1.png') }}" class="img-circle" alt="User Image">
+                <img src="{{ asset('img/user1-128x128.jpg') }}" class="img-circle" alt="User Image">
 
                 <p>
                     {{ Auth::user()->name }} - Web Developer
@@ -99,7 +103,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('img/photo1.png') }}" class="img-circle" alt="User Image">
+          <img src="{{ asset('img/user1-128x128.jpg') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -111,9 +115,9 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         
-        <li><a href="{{ route('items.index') }}"><i class="fa fa-book"></i> <span>Items</span></a></li>
-        <li><a href="{{ route('products.index') }}"><i class="fa fa-book"></i> <span>Products</span></a></li>
-        <li><a href="{{ route('rebottleproducts.index') }}"><i class="fa fa-book"></i> <span>Rebottle Products</span></a></li>
+        <li class="{{ Request::is('items*') ? 'active' : '' }}"><a href="{{ route('items.index') }}"><i class="fa fa-book"></i><span>Items</span></a></li>
+        <li class="{{ Request::is('products*') ? 'active' : '' }}"><a href="{{ route('products.index') }}"><i class="fa fa-shopping-bag"></i> <span>Products</span></a></li>
+        <li class="{{ Request::is('rebottleproducts*') ? 'active' : '' }}"><a href="{{ route('rebottleproducts.index') }}"><i class="fa fa-prescription-bottle"></i><span>Rebottle Products</span></a></li>
 
       </ul>
     </section>

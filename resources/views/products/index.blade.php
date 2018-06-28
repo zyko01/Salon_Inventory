@@ -50,16 +50,16 @@
             <td>{{ $value->date_delivered }}</td>
             <td style="width: 800px;">
                 <a class="btn btn-info btn-sm" href="{{ route('products.show', $value->id) }}">
-                    <i class="fas fa-th-large"></i>
+                    <i class="fa fa-th-large"></i>
                 </a>
 
                 <a class="btn btn-primary btn-sm" href="{{ route('products.edit', $value->id) }}">
-                    <i class="fas fa-edit"></i>
+                    <i class="fa fa-edit"></i>
                 </a>
 
                 {!! Form::open(['method' => 'DELETE', 'route' => ['products.destroy', $value->id], 'style'=>'display:inline' ]) !!}
                     <button type="submit" style="display:inline;" class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash"></i>
+                        <i class="fa fa-trash"></i>
                     </button>
                 {!! Form::close() !!}
             </td>
