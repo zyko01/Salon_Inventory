@@ -13,11 +13,6 @@
     </div>
         
     <div class="col-md-12">
-    {{ $rebottle->id }}
-    {{ $rebottle->product->product_name }}
-    </div>
-</div> 
-
-
-
+    {{ $rebottle->excess }}
+     
 @endsection

@@ -118,7 +118,7 @@
         <li class="{{ Request::is('items*') ? 'active' : '' }}"><a href="{{ route('items.index') }}"><i class="fa fa-book"></i><span>Items</span></a></li>
         <li class="{{ Request::is('products*') ? 'active' : '' }}"><a href="{{ route('products.index') }}"><i class="fa fa-shopping-bag"></i> <span>Products</span></a></li>
         <li class="{{ Request::is('rebottleproducts*') ? 'active' : '' }}"><a href="{{ route('rebottleproducts.index') }}"><i class="fa fa-prescription-bottle"></i><span>Rebottle Products</span></a></li>
-
+        <li class="{{ Request::is('excess*') ? 'active' : '' }}"><a href="{{ route('excess.index') }}"><i class="fa fa-bong"></i><span>Excess Products</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

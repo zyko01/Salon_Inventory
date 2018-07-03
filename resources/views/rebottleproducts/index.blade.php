@@ -42,13 +42,13 @@
             
 
             <td style="width: 400px;">
-                <!-- <a class="btn btn-info btn-sm" href="{{ route('rebottleproducts.show', $value->id) }}">
-                    <i class="glyphicon glyphicon-th-large"></i>
+                <a class="btn btn-info btn-sm" href="{{ route('rebottleproducts.show', $value->id) }}">
+                    <i class="fa fa-th-large"></i>
                 </a>
 
-                <a class="btn btn-primary btn-sm" href="{{ route('rebottleproducts.edit', $value->id) }}">
+                <!-- <a class="btn btn-primary btn-sm" href="{{ route('rebottleproducts.edit', $value->id) }}">
                     <i class="glyphicon glyphicon-pencil"></i>
-                </a> -->
+                </a> --> 
 
                 {!! Form::open(['method' => 'DELETE', 'route' => ['rebottleproducts.destroy', $value->id], 'style'=>'display:inline' ]) !!}
                     <button type="submit" style="display:inline;" class="btn btn-danger btn-sm">

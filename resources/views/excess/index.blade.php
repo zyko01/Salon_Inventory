@@ -28,7 +28,7 @@
         <tr>
             <td style="width: 100px;">{{ $value->id }}</td>
             <td>{{ $value->rebottle_id }}</td>
-            <td>{{ $value->excess_bottle }}</td>
+            <td>{{ $value->excess_bottle  }}ml</td>
             <td>{{ $value->created_at->format('M d, Y') }}</td>
             
 

@@ -31,7 +31,7 @@ class ExcessController extends Controller
     }
 
     public function create()
-    {   $rebottle = Rebottle::pluck('id')->toArray();
+    {   $rebottle = Rebottle::pluck('product_id','id')->toArray();
        
 
 
@@ -59,21 +59,19 @@ class ExcessController extends Controller
         return view('excess.edit', compact('excess'));
     }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $this->validate($request,[
-    //                                'product_id' => 'required',
-    //                                'quantity_use' => 'required',
-    //                                'produce_bottle' => 'required',
-    //                                'designation' => 'required']);
+    public function update(Request $request, $id)
+    {
+        $this->validate($request,[
+                                   'rebottle_id' => 'required',
+                                   'excess_bottle' => 'required']);
                                
-    //     Rebottle::find($id)->update($request->all());
-    //     return redirect()->route('rebottleproducts.index')->with('success', 'Successfully updated product');
-    // }
+        Excess::find($id)->update($request->all());
+        return redirect()->route('excess.index')->with('success', 'Successfully updated excess product');
+    }
 
     public function destroy($id)
     {
-        $rebottle = Rebottle::find($id)->delete();
-        return redirect()->route('rebottleproducts.index')->with('success', 'Successfully deleted product');
+        $excess = Excess::find($id)->delete();
+        return redirect()->route('excess.index')->with('success', 'Successfully deleted excess product');
     }
 }

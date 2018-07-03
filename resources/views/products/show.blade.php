@@ -11,21 +11,27 @@
             <a class="btn btn-primary" href="{{ route('products.index') }}"><i class="fa fa-arrow-left"></i></a>
         </div>
     </div>
-  <p></p>  
-    <!-- @foreach( $data as $val )
-        <p>{{ $val->product }}</p>
-        <p>{{ $val->total }}</p>
-        <p>{{ $product->product_quantity }}</p>
-    @endforeach -->
-        <p class="text-center">{{ $product->product_name }}</p>
-        <p>Quantity left {{ $product->product_quantity }}</p>
-       
-    <div class="col-md-12">
-    @foreach( $product->rebottle as $value )  
-        <p>rebottle id {{ $value->id }}</p>
-        <p>{{ $value->quantity_use }}</p>
-        <p>{{ $product->product_quantity }}</p>
-        @endforeach
+
+    <div class="col-md-8 col-md-offset-2 wrap">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                {{ $product->product_name }}
+            </div>
+
+            <div class="panel-body">
+               
+                @foreach( $product->rebottle as $value )  
+                <ul class="listholdeer">
+                    <li><strong>rebottle id</strong> {{ $value->id }}</li>
+                    <li><strong>Quantity Use</strong> {{ $value->quantity_use }}</li>
+                </ul>
+                   
+                @endforeach
+    
+            </div>
+        </div>
+    
+    
     </div>
 </div> 
 

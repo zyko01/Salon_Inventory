@@ -27,3 +27,13 @@ th{
     background-color: #16222a !important;
 }
 
+/* SHOW */
+
+.panel-body ul li{
+    list-style: none;
+}
+.panel-body ul{ 
+    border-bottom: 2px dotted #e3e3e3 !important;
+    padding-bottom: 10px;
+ }
+.panel-body ul:last-child{ border-bottom: none !important; }
