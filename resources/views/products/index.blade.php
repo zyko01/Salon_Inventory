@@ -33,7 +33,6 @@
       
         @foreach($product as $key => $value)
         <?php $total = 0; $total = $value->product_cost * $value->product_quantity; 
-        
         ?>
         <tr>
             <td style="width: 100px;">{{ $value->id }}</td>
@@ -66,5 +65,6 @@
         </tr>
         @endforeach
 </table>
+{{ $product->links() }}
 </div>
 @endsection

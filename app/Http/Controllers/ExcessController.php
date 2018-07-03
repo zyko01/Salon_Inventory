@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
 use App\Rebottle;
+use App\Excess;
 
-class RebottleProductController extends Controller
+class ExcessController extends Controller
 {
-     /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -25,46 +25,39 @@ class RebottleProductController extends Controller
       */
     public function index(){
 
-        $products = Product::all();
-        $rebottle = Rebottle::paginate(5);
-        return view('rebottleproducts.index', compact('rebottle', 'products'));
+        $rebottle = Rebottle::all();
+        $excess = Excess::paginate(5);
+        return view('excess.index', compact('rebottle', 'excess'));
     }
 
     public function create()
-    {   $product = Product::pluck('product_name','id')->toArray();
-        // $select = array();
-        // foreach($product as $key => $value){
-        //     $select[$value->product()->id ] = $value->product()->product_name;
-        // }
+    {   $rebottle = Rebottle::pluck('id')->toArray();
+       
 
 
-        return view('rebottleproducts.create', compact('product'));
+        return view('excess.create', compact('rebottle'));
     }
-
     public function show($id)
     {
-        $product = Product::all();
-        $rbottle = Rebottle::all();
+        $excess = Excess::find($id);
         $rebottle = Rebottle::find($id);
-        return view('rebottleproducts.show', compact('rebottle', 'rbottle', 'product'));
+        return view('rebottleproducts.show', compact('rebottle', 'excess'));
     }
 
     public function store(Request $request)
     {
-        $this->validate($request,['product_id' => 'required',
-                                  'quantity_use' => 'required',
-                                  'produce_bottle' => 'required',
-                                  'designation' => 'required']);
+        $this->validate($request,['rebottle_id' => 'required',
+                                  'excess_bottle' => 'required']);
       
-       Rebottle::create($request->all());
-       return redirect()->route('rebottleproducts.index')->with('success', 'Successfully created new product');
+       Excess::create($request->all());
+       return redirect()->route('excess.index')->with('success', 'Successfully Created New Excess Product');
     }
 
-    // public function edit($id)
-    // {
-    //     $rebottle = Rebottle::find($id);
-    //     return view('rebottleproducts.edit', compact('rebottle'));
-    // }
+    public function edit($id)
+    {
+        $excess = Excess::find($id);
+        return view('excess.edit', compact('excess'));
+    }
 
     // public function update(Request $request, $id)
     // {
@@ -83,5 +76,4 @@ class RebottleProductController extends Controller
         $rebottle = Rebottle::find($id)->delete();
         return redirect()->route('rebottleproducts.index')->with('success', 'Successfully deleted product');
     }
-
 }

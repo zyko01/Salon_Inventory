@@ -8,7 +8,7 @@
             <h2>Show Item</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('rebottleproducts.index') }}"><i class="glyphicon glyphicon-arrow-left"></i></a>
+            <a class="btn btn-primary" href="{{ route('rebottleproducts.index') }}"><i class="fa fa-arrow-left"></i></a>
         </div>
     </div>
         

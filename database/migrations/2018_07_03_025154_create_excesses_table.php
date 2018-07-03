@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRebottlesTable extends Migration
+class CreateExcessesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateRebottlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('rebottles', function (Blueprint $table) {
+        Schema::create('excesses', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('product_id');
-            $table->integer('quantity_use');
-            $table->integer('produce_bottle', 13, 1);
-            $table->enum('designation', ['RECEPTION', 'OFFICE', 'STOCK ROOM']);
-            
+            $table->unsignedInteger('rebottle_id');
+            $table->decimal('excess_bottle', 13,2);
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateRebottlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rebottles');
+        Schema::dropIfExists('excesses');
     }
 }

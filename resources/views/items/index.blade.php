@@ -32,8 +32,8 @@
             <td>{{ $value->item_description }}</td>
             <td>{{ $value->item_quantity }}</td>
             <td>{{ $value->item_status }}</td>
-            <td>{{ $value->item_cost }}</td>
-            <td>{{ $total }}</td>
+            <td>&#8369; {{ $value->item_cost }}</td>
+            <td><strong>&#8369; {{ $total }}</strong></td>
             <td>{{ $value->created_at->format('M d, Y') }}</td>
             <td style="width: 400px;">
                 <a class="btn btn-info btn-sm" href="{{ route('items.show', $value->id) }}">
@@ -54,6 +54,7 @@
         @endforeach
 
     </table>
+    {{ $item->links() }}
 
 </div>
 @endsection

@@ -19,4 +19,9 @@ class Rebottle extends Model
      {
         return $this->belongsTo('App\Product');
      }
+
+     public function excess()
+     {
+         return $this->hasOne('App\Excess');
+     }
 }

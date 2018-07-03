@@ -12,7 +12,7 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"> --> -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"> --> 
   <link rel="stylesheet" href="{{ asset('fonts/fontawesome/css/all.css') }}">
 
 
@@ -37,7 +37,7 @@
       <span class="logo-lg"><b>S</b>alon <b>I</b>nventory</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
+    <nav class="navbar navbar-inverse navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
@@ -129,9 +129,9 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <!-- <section class="content-header">
             section header
-    </section>
+    </section> -->
 
     <!-- Main content -->
     <section class="content">
@@ -145,9 +145,9 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
+    <!-- <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
-    </div>
+    </div> -->
     <strong>Copyright &copy; 2018 <a href="#">Salon Inventory</a>.</strong> All rights
     reserved.
   </footer>

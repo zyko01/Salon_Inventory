@@ -39,6 +39,8 @@ Route::group(['middleware' => 'admin'], function(){
 
     Route::resource('rebottleproducts', 'RebottleProductController');
 
+    Route::resource('excess', 'ExcessController');
+
     Route::get('/summary', 'SummaryController@index')->name('summary');
 });
 

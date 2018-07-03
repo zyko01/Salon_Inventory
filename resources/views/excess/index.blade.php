@@ -12,33 +12,24 @@
 @endif
 <table class="table table-striped">
         <tr>
-            <th>Rebottled ID</th>
-            <th>Product ID</th>
-            <th>Brand</th>
-            <th>Product Quantity</th>
-            <th>Product Quantity Used</th>
-            <!-- <th>Product Left</th> -->
-            <th>Produce Bottle</th>
-            <th>Designation</th>
+            <th>Excess ID</th>
+            <th>Rebottle ID</th>
+            <th>Excess Quantity / ml</th>
+            <th>Created at</th>
             <th class="text-left">
-                <a href="{{ route('rebottleproducts.create') }}" class="btn btn-success btn-small">
+                <a href="{{ route('excess.create') }}" class="btn btn-success btn-small">
                     <i class="fas fa-plus"></i>
                 </a>
             </th>
         </tr>
 
-        @foreach($rebottle as $key => $value)
-        <?php  $value->product->product_quantity = $value->product->product_quantity - $value->quantity_use; 
-        
-        ?>
+        @foreach($excess as $key => $value)
+    
         <tr>
             <td style="width: 100px;">{{ $value->id }}</td>
-            <td>{{ $value->product_id }}</td>
-            <td>{{ $value->product->product_name }}</td>
-            <td>{{ $value->product->product_quantity }}</td>
-            <td>{{ $value->quantity_use }}</td>
-            <td>{{ $value->produce_bottle }}</td>
-            <td>{{ $value->designation }}</td>
+            <td>{{ $value->rebottle_id }}</td>
+            <td>{{ $value->excess_bottle }}</td>
+            <td>{{ $value->created_at->format('M d, Y') }}</td>
             
 
             <td style="width: 400px;">
@@ -59,6 +50,6 @@
         </tr>
         @endforeach
 </table>
-{{ $rebottle->links() }}
+{{ $excess->links() }}
 </div>
 @endsection

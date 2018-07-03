@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Rebottle;
+use DB;
 
 class ProductController extends Controller
 {
@@ -25,7 +26,7 @@ class ProductController extends Controller
       */
      public function index()
      {
-         $product = Product::all();
+         $product = Product::paginate(5);
          $rebottle = Rebottle::all();
         
          return view('products.index', compact('rebottle','product'));
@@ -38,9 +39,14 @@ class ProductController extends Controller
      }
 
      public function show($id)
-     {
+     {  
+        $data = DB::table('rebottles')
+        ->select(DB::raw('product_id as product'), DB::raw('sum(quantity_use) as total'))
+        ->groupBy(DB::raw('product_id') )
+        ->get();
+        
          $product = Product::find($id);
-         return view('products.show', compact('product'));
+         return view('products.show', compact('product', 'data'));
      }
 
      public function store(Request $request)
