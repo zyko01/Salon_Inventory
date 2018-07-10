@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container-fluid">
-<h2>Rebottled Products Inventory</h2>
+<h2>Excess Products Inventory</h2>
 
 @if ( $message = Session::get('success') )
     <div class="alert alert-success">
